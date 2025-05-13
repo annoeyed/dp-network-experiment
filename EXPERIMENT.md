@@ -69,6 +69,22 @@ Below are the confusion matrices for both the baseline and DP models.
 
 ---
 
+
+## Epsilon vs Accuracy
+
+The graph below illustrates the trade-off between the privacy parameter ε and the model's classification accuracy.
+
+![Epsilon vs Accuracy](results/epsilon_vs_accuracy.png)
+
+### Interpretation
+
+- When ε is small (e.g., 0.5 or 1), strong privacy is enforced by injecting more noise, which causes accuracy to drop.
+- As ε increases, less noise is added during training, allowing the model to learn more accurate patterns from the data.
+- However, the improvement in accuracy tends to plateau after ε = 4, suggesting diminishing returns in utility as privacy weakens.
+- This visualizes the **privacy-utility trade-off** clearly: choosing ε involves balancing acceptable performance with required privacy.
+
+---
+
 ## Conclusion
 
 Differential Privacy via Opacus can be successfully integrated into a neural network-based IDS without significantly sacrificing accuracy.  
